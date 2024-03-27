@@ -5,11 +5,14 @@
  */
 package telas;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import model.bean.Entidades;
 import model.dao.EntidadesDAO;
+import model.bean.Funcionarios;
 
 /**
  *
@@ -27,6 +30,12 @@ public class TelaFuncionario extends javax.swing.JFrame {
      */
     public TelaFuncionario() {
         initComponents();
+         addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+              txtNome.setText(Funcionarios.getNomeAtual());
+         }
+        });
 ReadJtable();
         trabalhoTabela.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent event) {
@@ -75,19 +84,18 @@ ReadJtable();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         trabalhoTabela = new javax.swing.JTable();
+        txtNome = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(861, 502));
         setMinimumSize(new java.awt.Dimension(861, 502));
-        setPreferredSize(new java.awt.Dimension(861, 502));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 255, 51));
         jLabel2.setText("OLA FUNCIONARIO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 30, 230, 120);
+        jLabel2.setBounds(50, 60, 160, 50);
 
         jLabel3.setForeground(new java.awt.Color(102, 255, 102));
         jLabel3.setText("Estes sao os trabalhos que foram criados até agora,espere receber um trabalho");
@@ -109,6 +117,11 @@ ReadJtable();
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(50, 180, 710, 270);
+
+        txtNome.setForeground(new java.awt.Color(0, 204, 102));
+        txtNome.setText("jLabel1");
+        getContentPane().add(txtNome);
+        txtNome.setBounds(220, 70, 90, 30);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/background.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -159,5 +172,6 @@ ReadJtable();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable trabalhoTabela;
+    private javax.swing.JLabel txtNome;
     // End of variables declaration//GEN-END:variables
 }

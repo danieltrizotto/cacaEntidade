@@ -65,6 +65,7 @@ public class FuncionariosDAO {
 
             if (rs.next()) {
                 check = true;
+                Funcionarios.setNomeAtual(rs.getString("nome"));
             }
 
             rs.close();

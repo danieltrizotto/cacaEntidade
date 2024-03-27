@@ -239,6 +239,14 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void EditbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditbtnActionPerformed
         // TODO add your handling code here:
+          bean.setNome(nomeCampo.getText());//nome
+        bean.setCargo(cargoCampo.getText());//cargo
+        bean.setIdade(idadeCampo.getText());///idade
+        bean.setCpf(cpfCampo.getText());//cpf
+        bean.setDepartamento(deparCampo.getText());//departamento
+        bean.setUsuario(usuCampo.getText());//usuario
+        bean.setSenha(senhaCampo.getText());//senha
+       
         dao.update(bean);
         ReadJtable();
     }//GEN-LAST:event_EditbtnActionPerformed

@@ -121,7 +121,7 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = senhaCampo.getText();
 
         if (dao.lerLogin(usuario, senha)) {
-            if (usuarioCampo.getText().equals("chefe") && new String(senhaCampo.getPassword()).equals("senha")) {
+            if (usuarioCampo.getText().equals("chefe") && new String(senhaCampo.getPassword()).equals("1234")) {
                 JOptionPane.showMessageDialog(null, "login realizado com sucesso,bem vindo chefe");
                 TelaChefe y = new TelaChefe();
                 this.dispose();

@@ -12,6 +12,8 @@ public class Funcionarios {
 
     private int idfuncionarios;
     private String nome;
+    private static String nomeAtual;
+
     private String cargo;
     private String cpf;
     private String idade;
@@ -26,12 +28,20 @@ public class Funcionarios {
         this.cpf = cpf;
         this.idade = idade;
         this.departamento = departamento;
-        this.usuario= usuario;
+        this.usuario = usuario;
         this.senha = senha;
     }
 
     public String getUsuario() {
         return usuario;
+    }
+
+    public static String getNomeAtual() {
+        return nomeAtual;
+    }
+
+    public static void setNomeAtual(String nomeAtual) {
+        Funcionarios.nomeAtual = nomeAtual;
     }
 
     public void setUsuario(String usuario) {
