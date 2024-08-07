@@ -27,7 +27,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         initComponents();
         ReadJtable();
 
-        funciTabela.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+        funciTabela.getSelectionModel().addListSelectionListener(new ListSelectionListener() {//seleciona linha do banco
             public void valueChanged(ListSelectionEvent event) {
                 if (!event.getValueIsAdjusting()) {
                     int linhaselecionada = funciTabela.getSelectedRow();
@@ -42,7 +42,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     }
 
-    public void ReadJtable() {
+    public void ReadJtable() {//atualiza tabela
         DefaultTableModel modelo = (DefaultTableModel) funciTabela.getModel();
         modelo.setNumRows(0);
         FuncionariosDAO ert = new FuncionariosDAO();//dao

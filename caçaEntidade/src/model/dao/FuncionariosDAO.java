@@ -49,7 +49,7 @@ public class FuncionariosDAO {
 
     }
 
-    public boolean lerLogin(String usuario, String senha) {
+    public boolean lerLogin(String usuario, String senha) {//login de usuario
         boolean check = false;
         try {
             Connection conexao = Conexao.conectar();
@@ -119,7 +119,7 @@ public class FuncionariosDAO {
             e.printStackTrace();
         }
     }
-    public void update(Funcionarios traz){
+    public void update(Funcionarios traz){//dao em reparo
         try{
              Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
